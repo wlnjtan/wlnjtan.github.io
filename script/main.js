@@ -183,15 +183,16 @@ function showImage(file){
 	var reader   = new FileReader();
 
 	reader.readAsDataURL(file);
-	var Con    = document.getElementById("ImgCon");
+	
 	
 	// Con.innerHTML = '<img class="preimg" src="' + URL.createObjectURL(f) + '">';
 		//const f = new Blob(file);
 		//const url = window.URL.createObjectURL(blob);
 	
-	Con.innerHTML = "";
 	reader.onload = function(e) {
-		
+		var Con    = document.getElementById("ImgCon");
+		Con.innerHTML = "";
+		document.getElementById("previewdiv").style.setProperty('display', 'block');
 		Con.innerHTML = '<img class="preimg" src="' + e.target.result + '">';
 		imgobj.src = e.target.result;
 		document.getElementById('icon-preview').src = e.target.result;
