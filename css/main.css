@@ -195,3 +195,19 @@ input[type=file]{
  footer p{
 	 text-align: end;
  }
+ .fb-share-btn{
+	 background-color:#43609C;
+	 border-color: #43609C;
+	 font-size:12px;
+ }
+ .fb-share-btn:hover{
+	 background-color:#5370AD;
+ }
+  .twitter-share-btn{
+	 background-color:#55ACEE;
+	 border-color: #55ACEE;
+	 font-size:12px;
+ }
+ .twitter-share-btn:hover{
+	 background-color:#74BBF0;
+ }
