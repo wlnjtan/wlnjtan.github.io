@@ -1,1 +1,2 @@
-# xinli
+# Little Monkey Developer Toolkit, include: APP Icon Resize tool, APP Splash Resize tool...
+<http://devtoolkit.littlemonkeystudio.com>
