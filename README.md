@@ -1,2 +1,2 @@
 # Little Monkey Developer Toolkit, include: APP Icon Resize tool, APP Splash Resize tool...
-<http://www.littlemonkeystudio.com>
+<http://www.littlemonkeystudy.com>
