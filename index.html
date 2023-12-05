@@ -300,9 +300,14 @@
 </div>
 
 <footer class="container">
-  <p>© Little Monkey Technology 2020-2028</p>
+  <p>© Copyright <span id="cpr_date"></span> Little Monkey Technology All Rights Reserved.</p>
 </footer>
-
+    <script>
+        (function(){
+            let date = document.getElementById('cpr_date');
+            date.innerHTML = new Date().getFullYear();
+        })()
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
