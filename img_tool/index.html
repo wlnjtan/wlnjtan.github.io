@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A developer toolkit webservice, include: app icon resize tool, app splash screen resize tool. Support iOS, Android and Watch.">
+	<meta name="author" content="Little Monkey Technology">
+	<meta name="keywords" content="developer, toolkit, app, icon, appicon, splash, splashscreen, resize, generator, online, website, web">
+	<meta name="copyright" content="Little Monkey Technology">
+	<meta property="og:site_name" content="Little Monkey Developer Toolkit">
+	<meta property="og:title" content="Little Monkey Developer Toolkit">
+	<meta property="og:description" content="A developer toolkit webservice, include: app icon resize tool, app splash screen resize tool. Support iOS, Android and Watch.">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="http://www.littlemonkeystudy.com/">
+	<meta name="msvalidate.01" content="14ADF18CFDDA9E4C2BDDEB6E5312C44B" />
+    <!-- Bootstrap CSS -->
+    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"-->
+	
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="icon" href="favicon.ico" type="images/x-icon">
+
+    <title>Little Monkey Developer Toolkit</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-P2493RNCYJ"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'G-P2493RNCYJ');
+	</script>
+	<script data-ad-client="ca-pub-4605280881480255" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <img src="./img/icon.png" style="width:2rem; margin-right:5px;" /> <span class="navbar-brand">Little Monkey Developer Toolkit</span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active appicon-nav">
+        <a class="nav-link" href="javascript:void(0);" onclick="switchTool('appicon')">App Icon <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item appsplash-nav">
+        <a class="nav-link" href="javascript:void(0);" onclick="switchTool('appsplash')">App Splash</a>
+      </li>
+      <!-- li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li-->
+    </ul>
+
+  </div>
+</nav>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 id="header-title" class="display-4">App Icon Resize Tool</h1>
+      <p>A tool to resize your app icon to all needed resolutions automatically.</p>
+	  
+	  <div class="upload-area splash">
+		<div class="uploaddiv" draggable="false" ondrop="dropfile(event)">
+			<button type="button" class="btn btn-secondary btn-lg upload-btn">
+				<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-cloud-arrow-up-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				  <path fill-rule="evenodd" d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 5.146l-2-2a.5.5 0 0 0-.708 0l-2 2a.5.5 0 1 0 .708.708L7.5 6.707V10.5a.5.5 0 0 0 1 0V6.707l1.146 1.147a.5.5 0 0 0 .708-.708z"/>
+				</svg>
+				<input type="file" id="changeMore" onchange="fileChange(event)" accept="image/*">
+				Upload File
+			</button>
+			
+			<p class="only-icon">A 1024x1024 pixels original image without rounded corners is recommended.</p>
+			<p class="only-splash">A 2732x2732 pixels original image is recommended.</p>
+			<div id="previewdiv" style="display:none;">
+				<div id="ImgCon" onclick="showSafeArea()">
+					
+				</div>
+				<div id="safe-area">
+				</div>
+			</div>
+		</div>
+		<div class="control-area">
+			<p style="font-weight:500;">
+				Settings:
+			</p>
+			<img id="icon-preview" src="./img/icon.png">
+			<div class="form-group form-inline">
+				<label>Quality</label>
+				<input type="number" class="form-control" min="50" max="100.00" step="1" id="output-quality" value="92" placeholder="percentage">
+			</div>
+			<form class="form-inline android-rounded-form">
+				<div class="custom-control custom-switch">
+				  <input type="checkbox" class="custom-control-input" id="android-rounded" aria-label="Checkbox for Android Border radius" checked>
+				  <label class="custom-control-label" for="android-rounded">
+					Android Border Radius
+				  </label>
+				</div>
+				<div class="form-group">
+					<input type="number" class="form-control" min="0" max="100.00" step="0.01" id="android-border-radius" value="17.54" placeholder="percentage">
+					<label>%</label>
+				</div>
+			</form>
+			
+			<div class="custom-control custom-switch gen-zip-div">
+				  <input type="checkbox" class="custom-control-input" id="ionic-project" checked>
+				  <label class="custom-control-label" for="ionic-project">
+					IONIC or Cordova Project
+				  </label>
+			</div>
+			<div class="android-folder form-group form-inline" style="display:none;">
+				<label for="android-folder-select">Android Folder</label>
+				<select class="form-control" id="android-folder-select" disabled>
+				  <option value="mipmap">mipmap</option>
+				  <option value="drawable">drawable</option>
+				</select>
+			</div>
+			<button class="btn btn-primary btn-lg build-btn" onclick="build(event)">
+				<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-cloud-arrow-down-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				  <path fill-rule="evenodd" d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 6.854l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5a.5.5 0 0 1 1 0v3.793l1.146-1.147a.5.5 0 0 1 .708.708z"/>
+				</svg> Build & Download
+			</button> 
+			
+		</div>
+		<div class="advertising-area1">
+                 advertising
+		</div>
+		<div style="clear:both;"></div>
+	 </div>
+	  <a type="button" class="btn btn-primary btn-sm fb-share-btn" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.littlemonkeystudy.com" target="_blank">Share on Facebook</a>
+	  <a type="button" class="btn btn-primary btn-sm twitter-share-btn" href="https://twitter.com/intent/tweet?text=Little%20Monkey%20Developer%20Toolkit&url=http%3A%2F%2Fwww.littlemonkeystudy.com" target="_blank">Tweet</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-6" id="android-ul">
+		<div class="ul-header">
+			<div class="custom-control custom-switch">
+			  <input type="checkbox" class="custom-control-input" id="android-ul-check" checked>
+			  <label class="custom-control-label" for="android-ul-check"> </label>
+			</div>
+			<h4 class="display-4">Android</h4>
+			<div class="btn-group" role="group">
+			  <button type="button" class="btn btn-link btn-sm" onclick="filterUL('ANDROID', 'ALL')">All</button>
+			  <button type="button" class="btn btn-link btn-sm only-splash" onclick="filterUL('ANDROID', 'port')">Portrait</button>
+			  <button type="button" class="btn btn-link btn-sm only-splash" onclick="filterUL('ANDROID', 'land')">Landscape</button>
+			  <button type="button" class="btn btn-link btn-sm" onclick="filterUL('ANDROID', 'RESET')">Reset</button>
+			  <button type="button" class="btn btn-link btn-sm" onclick="showAddCustomOptionDlg('android')">
+				  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+					<path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+				  </svg>Custom
+			   </button>
+			</div>
+		</div>
+        <ul class="icon-ul list-group">
+
+		</ul>
+      </div>
+      <div class="col-md-6"  id="ios-ul">
+		<div class="ul-header">
+			<div class="custom-control custom-switch">
+			  <input type="checkbox" class="custom-control-input" id="ios-ul-check" checked>
+			  <label class="custom-control-label" for="ios-ul-check"> </label>
+			</div>
+			<h4 class="display-4">IOS</h4>
+			<div class="btn-group" role="group">
+			  <button type="button" class="btn btn-link btn-sm" onclick="filterUL('IOS', 'ALL')">All</button>
+			  <button type="button" class="btn btn-link btn-sm only-icon" onclick="filterUL('IOS', 'iphone')">Iphone</button>
+			  <button type="button" class="btn btn-link btn-sm only-icon" onclick="filterUL('IOS', 'watch')">Watch</button>
+			  <button type="button" class="btn btn-link btn-sm only-splash" onclick="filterUL('IOS', 'port')">Portrait</button>
+			  <button type="button" class="btn btn-link btn-sm only-splash" onclick="filterUL('IOS', 'land')">Landscape</button>
+			  <button type="button" class="btn btn-link btn-sm" onclick="filterUL('IOS', 'RESET')">Reset</button>
+			  <button type="button" class="btn btn-link btn-sm" onclick="showAddCustomOptionDlg('ios')">
+				  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+					<path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+				  </svg>Custom
+			   </button>
+			</div>
+		</div>
+        <ul class="icon-ul list-group">
+	
+			
+		</ul>
+      </div>
+
+    </div>
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+
+<div class="modal fade" id="addOptionModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Custom Image Option</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="needs-validation" novalidate>
+          <input type="text" class="form-control" id="aom-platform" value="ANDROID" hidden>
+          <div class="form-group">
+            <label for="aom-title" class="col-form-label">Title</label>
+            <input type="text" class="form-control" id="aom-title" required>
+          </div>
+          <div class="form-group">
+            <label for="aom-filename" class="col-form-label">File Full Name</label>
+            <input class="form-control" id="aom-filename" required></input>
+			 <small id="emailHelp" class="form-text text-muted">File path and name without extension, such as: ios\splash\Default-2208h</small>
+          </div>
+		 <div class="form-row">
+			<div class="form-group col-md-4">
+			  <label for="aom-width">Width</label>
+			  <input type="number" type="number" min="10" max="3000" class="form-control" id="aom-width" required>
+			  <div class="invalid-feedback">
+				Width Range: 10-3000.
+			  </div>
+			</div>
+			<div class="form-group col-md-4">
+			  <label for="aom-height">Height</label>
+			  <input type="number" type="number" min="10" max="3000" class="form-control" id="aom-height" required>
+			  <div class="invalid-feedback">
+				Width Range: 10-3000.
+			  </div>
+			</div>
+			<div class="form-group col-md-4">
+			  <label for="aom-imgtype">Image Type</label>
+			  <select id="aom-imgtype" class="form-control">
+				<option value="png" selected>PNG</option>
+				<option value="jpg">JPG</option>
+			  </select>
+			</div>
+		  </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="addCustomOption()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		<input type="text" class="form-control" id="dcm-id" value="" hidden>
+        <p>Do you want to delete the custom option?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" onclick="removeCustomOption()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="loadingModal" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Building...</h5>
+      </div>
+      <div class="modal-body">
+		<div class="spinner-border text-success" role="status">
+		  <span class="sr-only">Loading...</span>
+		</div>	
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container">
+  <p>© Copyright <span id="cpr_date"></span> Little Monkey Technology All Rights Reserved.</p>
+</footer>
+    <script>
+        (function(){
+            let date = document.getElementById('cpr_date');
+            date.innerHTML = new Date().getFullYear();
+        })()
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script-->
+	
+	<script src="./script/jquery-3.5.1.slim.min.js"></script>
+    <script src="./script/popper.min.js"></script>
+    <script src="./script/bootstrap.min.js" ></script>
+	
+	<script src="./script/jszip.min.js"></script>
+	<script src="./script/main.min.js"></script>
+  </body>
+</html>
